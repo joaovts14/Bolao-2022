@@ -4,7 +4,7 @@ body {
 	background: linear-gradient(45deg, #49a09d, #5f2c82);
 	font-family: sans-serif;
 	font-weight: 100;
-    height: 3000px;
+	height: 967px;
 }
 
 .container {
@@ -12,8 +12,7 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-    margin-top: 600px;
-}
+    margin-top: 67px;}
 
 table {
 	/* width: 800px; */
@@ -103,17 +102,17 @@ background-color:  green;
 
 .pontuacao-rodada,.pontuacao-rodada-header{
 	width: 100px;
-	font-size: larger;
+	/* font-size: larger; */
 }
 
 .pontuacao-rodada{
 	color: rgb(15, 255, 15);
 }
 th{
-	font-size: larger;
+	/* font-size: larger; */
 }
 table{
-	font-size: xx-large;
+	/* font-size: xx-large; */
 	vertical-align: auto;
 }
 
@@ -129,8 +128,8 @@ table{
 }
 td{
 	padding: 15px;
-    background-color: rgb(255 255 255 / 58%);
+    background-color: rgb(255 255 255 / 15%);
     color: #fff;
     font-weight: bolder;
-    color: #180606;
+    color: white;
 }
