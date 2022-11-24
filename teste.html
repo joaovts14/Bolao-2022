@@ -1,0 +1,280 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+
+
+<input type="button" id="gabButton" value="insert gabarito" onclick="document.getElementById('gabarito').click();" />
+<input style="display: none;" type="file" id="gabarito" />
+
+<!-- <label for="quantity">Quantity (between 1 and 5):</label> -->
+<input type="number" id="quantity" name="quantity" min="1" max="5">
+    <div class="container">
+      <input type="file" id="input" />
+    <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-baqh ">#</th>
+        <th class="tg-baqh ">Jogador</th>
+        <th class="tg-baqh ">Pontuação</th>
+        <th class="pontuacao-rodada-header">      Pontuação na rodada</th>
+
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-baqh posicao primeiro">1º</td>
+        <td class="tg-baqh player primeiro"></td>
+        <td class="tg-baqh pontuacao primeiro"></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+
+    </tr>
+      <tr class="">
+        <td class="tg-baqh posicao prata">2°</td>
+        <td class="tg-baqh player prata"></td>
+        <td class="tg-baqh pontuacao prata"></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+
+      </tr>
+      <tr class="">
+        <td class="tg-baqh posicao ">3°</td>
+        <td class="tg-baqh player "></td>
+        <td class="tg-baqh pontuacao "></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+      </tr>
+      <tr class="">
+        <td class="tg-baqh posicao ">4°</td>
+        <td class="tg-baqh player "></td>
+        <td class="tg-baqh pontuacao "></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+      </tr>
+      <tr class="">
+        <td class="tg-baqh posicao ">5°</td>
+        <td class="tg-baqh player "></td>
+        <td class="tg-baqh pontuacao "></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+    </tr>
+      <tr>
+        <td class="tg-baqh posicao">6°</td>
+        <td class="tg-baqh player"></td>
+        <td class="tg-baqh pontuacao"></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+    </tr>
+      <tr>
+        <td class="tg-baqh posicao">7°</td>
+        <td class="tg-baqh player"></td>
+        <td class="tg-baqh pontuacao"></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+    </tr>
+      <tr>
+        <td class="tg-baqh posicao">8°</td>
+        <td class="tg-baqh player"></td>
+        <td class="tg-baqh pontuacao"></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh posicao">9°</td>
+        <td class="tg-baqh player"></td>
+        <td class="tg-baqh pontuacao"></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh posicao">10°</td>
+        <td class="tg-baqh player"></td>
+        <td class="tg-baqh pontuacao"></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh posicao">11°</td>
+        <td class="tg-baqh player"></td>
+        <td class="tg-baqh pontuacao"></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh posicao">12°</td>
+        <td class="tg-baqh player"></td>
+        <td class="tg-baqh pontuacao"></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh posicao">13°</td>
+        <td class="tg-baqh player"></td>
+        <td class="tg-baqh pontuacao"></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh posicao">14°</td>
+        <td class="tg-baqh player"></td>
+        <td class="tg-baqh pontuacao"></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh posicao">15°</td>
+        <td class="tg-baqh player"></td>
+        <td class="tg-baqh pontuacao"></td>
+        <td class="tg-baqh pontuacao-rodada"></td>
+
+    </tr>
+    </tbody>
+    </table>
+
+
+    <table class="tg jogos">
+    <thead>
+      <tr>
+        <th class="tg-baqh "></th>
+        <th class="tg-baqh time1"></th>
+        <th class="tg-baqh vs">X</td>
+
+        <th class="tg-baqh time2"></th>
+
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1 "></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2 "></td>
+
+
+    </tr>
+      <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+      </tr>
+      <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+      </tr>
+      <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+      </tr>
+      <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+    </tr>
+      <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+    </tr>
+      <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+    </tr>
+      <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+    </tr>
+    <tr>
+        <td class="tg-baqh jogador-palpites"></td>
+        <td class="tg-baqh time1"></td>
+                <td class="tg-baqh vs">X</td>
+
+        <td class="tg-baqh time2"></td>
+
+    </tr>
+    </tbody>
+    </table>
+
+
+</div>
+
+
+<script src="./read-excel-file.min.js"></script>
+<script src="./main.js"></script>

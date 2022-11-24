@@ -1,0 +1,136 @@
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+	font-family: sans-serif;
+	font-weight: 100;
+    height: 3000px;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    margin-top: 600px;
+}
+
+table {
+	/* width: 800px; */
+	/* border-collapse: collapse; */
+	/* overflow: hidden; */
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    margin-top: 200px;
+}
+
+
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+  font-weight: bolder;
+  color: white;
+
+}
+
+
+th {
+	padding: 15px;
+    background-color: rgb(203 191 191 / 17%);
+  font-weight: bolder;
+  color: white;
+
+}
+
+th {
+	text-align: left;
+}
+
+
+
+tbody tr :hover {
+    background-color: rgb(203 191 191 / 17%);		}
+	
+	
+
+
+.red {
+
+
+    background-color: rgb(255, 0, 0);
+
+
+}
+
+.green {
+
+
+background-color:  green;
+
+
+}
+
+
+
+.posicao{
+  color: white;
+
+
+}
+.primeiro{
+  font-weight: bolder;
+  background-color: gold;
+  border-color: gold;
+  color: black;
+}
+.tg {
+    border-collapse: inherit!important;
+    border-spacing: 2px!important;
+}
+
+.tg-baqh{
+    width: 100px;
+}
+
+     .tg  {border-collapse:collapse;border-spacing:0;}
+
+    .tg .tg-baqh{text-align:center;}
+
+.prata{
+    background-color: silver;
+    color: black!important;
+}
+
+.pontuacao-rodada,.pontuacao-rodada-header{
+	width: 100px;
+	font-size: larger;
+}
+
+.pontuacao-rodada{
+	color: rgb(15, 255, 15);
+}
+th{
+	font-size: larger;
+}
+table{
+	font-size: xx-large;
+	vertical-align: auto;
+}
+
+.vermelho{
+	color: red;
+}
+
+.verde{
+	color: green;
+}
+.cinza{
+	color: black;
+}
+td{
+	padding: 15px;
+    background-color: rgb(255 255 255 / 58%);
+    color: #fff;
+    font-weight: bolder;
+    color: #180606;
+}
