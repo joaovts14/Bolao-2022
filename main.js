@@ -5105,15 +5105,15 @@ palpiteCarla = [
    const input = document.getElementById('input')
    const gabarito = document.getElementById('gabarito')
  
-   var jogos = [0,1,6,7,12,13,18,19,24,25,30,31,36,37,42,43,8,2,3,9,20,14,21]
+   var jogos = [0,1,6,7,12,13,18,19,24,25,30,31,36,37,42,43,8,2,3,9,20,14,21,15,26,27,32,33]
    var rodada = new Set();
-   rodada.add(20)
-   rodada.add(14)
-   rodada.add(21)
-//    rodada.add(9)
+   rodada.add(26)
+   rodada.add(27)
+   rodada.add(32)
+   rodada.add(33)
 
 
-   var jogosReal= [[0,2],[0,2],[6,2],[1,1],[1,2],[0,0],[0,0],[4,1],[1,2],[7,0],[0,0],[1,0],[1,0],[2,0],[0,0],[3,2],[0,2],[1,3],[1,1],[0,0],[0,1],[2,0],[2,1]]
+   var jogosReal= [[0,2],[0,2],[6,2],[1,1],[1,2],[0,0],[0,0],[4,1],[1,2],[7,0],[0,0],[1,0],[1,0],[2,0],[0,0],[3,2],[0,2],[1,3],[1,1],[0,0],[0,1],[2,0],[2,1],[2,0],[0,1],[1,1],[0,2],[4,1]]
  var totalRodada = 0;
    var players = new Map();
    players.set("JOAO", [0,0]);
