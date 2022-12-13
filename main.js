@@ -5135,12 +5135,29 @@ palpiteCarla = [
     38,
     39,
     44,
-    45]
+    45,
+    4,
+    5,
+    10,
+    11,
+    16,
+    17,
+    22,
+    23,
+    34,
+    35,
+    28,
+    29,
+    46,
+    47,
+    40,
+    41
+]
    var rodada = new Set();
-   rodada.add(38)
-   rodada.add(39)
-   rodada.add(44)
-   rodada.add(45)
+//    rodada.add(46)
+//    rodada.add(47)
+//    rodada.add(40)
+//    rodada.add(41)
 
 
    var jogosReal= [[0,2], //0
@@ -5174,24 +5191,41 @@ palpiteCarla = [
    [3,3],//38
    [1,0],//39
    [2,3],//44
-   [2,0]]//45
+   [2,0],//45
+   [1,2],//4
+   [2,0],//5
+   [0,1],//10
+   [0,3],//11
+   [0,2],//16
+   [1,2],//17
+   [1,0],//22
+   [1,0],//23
+   [1,2],//34
+   [0,0],//35
+   [2,1],//28
+   [2,4],//29
+   [2,1],//46
+   [0,2],//47
+   [2,3],//40
+   [1,0]//41
+]
  var totalRodada = 0;
    var players = new Map();
-   players.set("JOAO", [0,0]);
-   players.set("LEONE", [0,0]);
-   players.set("RAFAEL",[0,0]);
-   players.set("VITOR", [0,0]);
-   players.set("MATEUS", [0,0]);
-   players.set("NILTON", [0,0]);
-   players.set("GERALDO", [0,0]);
-   players.set("GABRIEL", [0,0]);
-   players.set("REGINALDO", [0,0]);
-   players.set("MICAELE", [0,0]);
-   players.set("LEONARDO", [0,0]);
-   players.set("JANIO", [0,0]);
-   players.set("DANILO", [0,0]);
-   players.set("CARLA/CARLOS/ANA", [0,0]);
-   players.set("GABRIELA/THALITA", [0,0]);
+   players.set("JOAO", [110+0+25+25+22+10+20+0+14+120+10,10]);
+   players.set("LEONE", [110+4+22+22+28+10+28+15+20+80+10,10]);
+   players.set("RAFAEL",[90+22+20+20+28+35+22+0+14+80+25,25]);
+   players.set("VITOR", [90+4+20+28+4+0+25+25+0+80+10,10]);
+   players.set("MATEUS", [90+14+28+25+20+10+20+0+22+120+25,25]);
+   players.set("NILTON", [110+25+28+25+20+10+20+15+22+120+15,15]);
+   players.set("GERALDO", [110+22+20+14+20+0+25+0+0+60+15,15]);
+   players.set("GABRIEL", [110+25+28+28+14+10+20+0+20+100+10,10]);
+   players.set("REGINALDO", [110+20+35+22+22+25+20+0+20+80+25,25]);
+   players.set("MICAELE", [120+4+25+25+22+25+20+15+14+120+0,0]);
+   players.set("LEONARDO", [90+25+35+28+22+10+20+0+20+120+10,10]);
+   players.set("JANIO", [110+20+14+28+22+25+20+0+0+80+10,10]);
+   players.set("DANILO", [80+22+28+22+35+25+20+0+22+100+10,10]);
+   players.set("CARLA/CARLOS/ANA", [90+35+25+14+20+15+22+0+22+100+25,25]);
+   players.set("GABRIELA/THALITA", [130+35+35+25+22+25+22+0+20+120+25,25]);
  
  
    players.forEach(function(value, key) {
@@ -5205,6 +5239,7 @@ palpiteCarla = [
     palpiteAway =    palpites[indice][jogos[j]][2]
 
      empatePlayer =palpiteHome == palpites[indice][jogos[j]][2];
+    //  console.log(real[1])
      empateReal = real[1] == real[0];
  
      if(!empatePlayer){
@@ -5260,7 +5295,7 @@ palpiteCarla = [
      if(rodada.has(jogos[j])){
         totalRodada = totalRodada + soma;
      }
-     value[1] = totalRodada; 
+    //  value[1] = totalRodada; 
 
      j++;
      players.set(key,value)
@@ -5277,6 +5312,7 @@ palpiteCarla = [
  
  i = 0;
  ordenado.forEach(function(value, key) {
+    debugger;
      trs.get(i).innerHTML = key;
      trs2.get(i).innerHTML = value[0];
      trs3.get(i).innerHTML = "+"+value[1];
@@ -5319,7 +5355,7 @@ palpiteCarla = [
     //     console.log(data)
     //   })
  // 6,7,1
- var jogo = 9
+ var jogo = 47
     thTime1.innerHTML = palpites[0][jogo][0]
     thTime2.innerHTML = palpites[0][jogo][3]
 
@@ -5351,13 +5387,15 @@ palpiteCarla = [
  
    input.addEventListener('change', () => {
      readXlsxFile(input.files[0]).then((data) => {
-       writeTabela(data)
+       writeTabela(data);
      })
    })
  
    gabarito.addEventListener('change', () => {
      readXlsxFile(gabarito.files[0]).then((data) => {
-       writeTabelaGab(data)
+       writeTabelaGab(data);
+       getSelecoesClassificadasOitavas(data);
+
      })
    })
 
@@ -5405,6 +5443,165 @@ palpiteCarla = [
        jogosGab[jogoGabId][4] = getResultado(jogosGab[jogoGabId][1], jogosGab[jogoGabId][2])
        jogoGabId++
      }
+   }
+
+   function getSelecoesClassificadasOitavas(data){
+    //    var faseGrupoParaOitavas  = new Array(8);
+    //    var grupoA = new Array(2);
+    //    grupoA[0] = data[5][11]
+    //    grupoA[1] = data[6][11]
+    //    faseGrupoParaOitavas[0] = grupoA;
+    //    var grupoB = new Array(2);
+    //    grupoB[0] = data[5+8][11]
+    //    grupoB[1] = data[6+8][11]
+    //    faseGrupoParaOitavas[1] = grupoB;
+    //    var grupoC = new Array(2);
+    //    grupoC[0] = data[5+16][11]
+    //    grupoC[1] = data[6+16][11]
+    //    faseGrupoParaOitavas[2] = grupoC;
+    //    var grupoD = new Array(2);
+    //    grupoD[0] = data[5+24][11]
+    //    grupoD[1] = data[6+24][11]
+    //    faseGrupoParaOitavas[3] = grupoD;
+    //    var grupoE = new Array(2);
+    //    grupoE[0] = data[5+32][11]
+    //    grupoE[1] = data[6+32][11]
+    //    faseGrupoParaOitavas[4] = grupoE;
+    //    var grupoF = new Array(2);
+    //    grupoF[0] = data[5+40][11]
+    //    grupoF[1] = data[6+40][11]
+    //    faseGrupoParaOitavas[5] = grupoF;
+    //    var grupoG = new Array(2);
+    //    grupoG[0] = data[5+48][11]
+    //    grupoG[1] = data[6+48][11]
+    //    faseGrupoParaOitavas[6] = grupoG;
+    //    var grupoH = new Array(2);
+    //    grupoH[0] = data[5+56][11]
+    //    grupoH[1] = data[6+56][11]
+    //    faseGrupoParaOitavas[7] = grupoH;
+
+    resultadoOitavas = ["Holanda","Inglaterra","Argentina","França","Marrocos","Croácia","Brasil","Portugal"]
+    //    resultadoB = ["Inglaterra","Estados Unidos"]
+    //    resultadoC = ["Argentina","Polônia"]
+    //    resultadoD = ["França","Austrália"]
+    //    resultadoE = ["Japão","Espanha"]
+    //    resultadoF = ["Marrocos","Croácia"]
+    //    resultadoG = ["Brasil","Suíça"]
+    //    resultadoH = ["Portugal","Coréia do Sul"]
+
+       $(".timePos1A")[0].innerHTML = data[11][30]
+       $(".timePos1B")[0].innerHTML = data[12][30]
+       $(".timePos1C")[0].innerHTML = data[27][30]
+       $(".timePos1D")[0].innerHTML = data[28][30]
+    //    $(".timePos1E")[0].innerHTML = data[23][26]
+    //    $(".timePos1F")[0].innerHTML = data[24][26]
+    //    $(".timePos1G")[0].innerHTML = data[31][26]
+    //    $(".timePos1H")[0].innerHTML = data[32][26]
+       $("#nome")[0].innerHTML=data[0][0]
+    //    $(".timePos2A")[0].innerHTML = faseGrupoParaOitavas[0][1]
+    //    $(".timePos2B")[0].innerHTML = faseGrupoParaOitavas[1][1]
+    //    $(".timePos2C")[0].innerHTML = faseGrupoParaOitavas[2][1]
+    //    $(".timePos2D")[0].innerHTML = faseGrupoParaOitavas[3][1]
+    //    $(".timePos2E")[0].innerHTML = faseGrupoParaOitavas[4][1]
+    //    $(".timePos2F")[0].innerHTML = faseGrupoParaOitavas[5][1]
+    //    $(".timePos2G")[0].innerHTML = faseGrupoParaOitavas[6][1]
+    //    $(".timePos2H")[0].innerHTML = faseGrupoParaOitavas[7][1]
+
+
+    //    if(resultadoOitavas.includes(data[7][26])){
+    //         $(".timePos1A")[0].classList.add("verde2");
+    //    }else{
+    //         $(".timePos1A")[0].classList.add("vermelho2");
+    //    }
+    //    if(resultadoA.includes(faseGrupoParaOitavas[0][1])){
+    //         $(".timePos2A")[0].classList.add("verde2");
+    //     }else{
+    //         $(".timePos2A")[0].classList.add("vermelho2");
+    //    }
+
+    //    if(resultadoOitavas.includes(data[8][26])){
+    //     $(".timePos1B")[0].classList.add("verde2");
+    //    }else{
+    //     $(".timePos1B")[0].classList.add("vermelho2");
+    //    }
+    //      if(resultadoB.includes(faseGrupoParaOitavas[1][1])){
+    //     $(".timePos2B")[0].classList.add("verde2");
+    //       }else{
+    //     $(".timePos2B")[0].classList.add("vermelho2");
+    //     }
+
+
+        // if(resultadoOitavas.includes(data[15][26])){
+        // $(".timePos1C")[0].classList.add("verde2");
+        // }else{
+        // $(".timePos1C")[0].classList.add("vermelho2");
+        // }
+    //         if(resultadoC.includes(faseGrupoParaOitavas[2][1])){
+    //     $(".timePos2C")[0].classList.add("verde2");
+    //         }else{
+    //     $(".timePos2C")[0].classList.add("vermelho2");
+    //     }
+
+
+        // if(resultadoOitavas.includes(data[16][26])){
+        // $(".timePos1D")[0].classList.add("verde2");
+        // }else{
+        // $(".timePos1D")[0].classList.add("vermelho2");
+        // }
+    //         if(resultadoD.includes(faseGrupoParaOitavas[3][1])){
+    //     $(".timePos2D")[0].classList.add("verde2");
+    //         }else{
+    //     $(".timePos2D")[0].classList.add("vermelho2");
+    //     }
+
+        // if(resultadoOitavas.includes(data[23][26])){
+        // $(".timePos1E")[0].classList.add("verde2");
+        // }else{
+        // $(".timePos1E")[0].classList.add("vermelho2");
+        // }
+    //     if(resultadoE.includes(faseGrupoParaOitavas[4][1])){
+    //     $(".timePos2E")[0].classList.add("verde2");
+    //     }else{
+    //     $(".timePos2E")[0].classList.add("vermelho2");
+    //     }
+
+
+        // if(resultadoOitavas.includes(data[24][26])){
+        // $(".timePos1F")[0].classList.add("verde2");
+        // }else{
+        // $(".timePos1F")[0].classList.add("vermelho2");
+        // }
+    //     if(resultadoF.includes(faseGrupoParaOitavas[5][1])){
+    //     $(".timePos2F")[0].classList.add("verde2");
+    //     }else{
+    //     $(".timePos2F")[0].classList.add("vermelho2");
+    //     }
+
+
+        // if(resultadoOitavas.includes(data[31][26])){
+        // $(".timePos1G")[0].classList.add("verde2");
+        // }else{
+        // $(".timePos1G")[0].classList.add("vermelho2");
+        // }
+    //         if(resultadoG.includes(faseGrupoParaOitavas[6][1])){
+    //     $(".timePos2G")[0].classList.add("verde2");
+    //         }else{
+    //     $(".timePos2G")[0].classList.add("vermelho2");
+    //     }
+
+        // if(resultadoOitavas.includes(data[32][26])){
+        // $(".timePos1H")[0].classList.add("verde2");
+        // }else{
+        // $(".timePos1H")[0].classList.add("vermelho2");
+        // }
+    //         if(resultadoH.includes(faseGrupoParaOitavas[7][1])){
+    //     $(".timePos2H")[0].classList.add("verde2");
+    //         }else{
+    //     $(".timePos2H")[0].classList.add("vermelho2");
+    //     }
+
+                    
+
    }
  
    function getResultado(placar1, placar2){
